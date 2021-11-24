@@ -1,0 +1,12 @@
+#background-1 {
+    border: none;
+    background-image: url('../../Models/Frame/ 292.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+.center-fit { 
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}

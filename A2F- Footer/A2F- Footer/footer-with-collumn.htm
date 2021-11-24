@@ -11,14 +11,195 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
 
     <!-- font awesome-->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
-    <!-- File CSS Footer-->
-    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!--  CSS Footer-->
+    <style>
+
+        .footer-color1 {
+            padding: 30px 0;
+            background-color: #0D3D68;
+            ;
+            ;
+            color: white;
+        }
+
+        .footer-color2 {
+            padding: 30px 0;
+            background-color: #1C3552;
+            ;
+            color: white;
+        }
+
+        .footer-clean h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .footer-clean ul {
+            padding: 0;
+            list-style: none;
+            line-height: 1.6;
+            font-size: 12px;
+            margin-bottom: 0;
+        }
+
+        .footer-clean ul a {
+            color: inherit;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+
+        .footer-clean ul a:hover {
+            opacity: 1;
+        }
+
+        .footer-clean .item.social {
+            text-align: right;
+        }
+
+        @media (max-width:767px) {
+            .footer-clean .item {
+                text-align: center;
+                padding-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-clean .item.social {
+                text-align: center;
+            }
+        }
+
+        .footer-clean .item.social>a {
+            font-size: 20px;
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            text-align: center;
+            color: inherit;
+            opacity: 0.75;
+        }
+
+        .footer-clean .item.social>a:hover {
+            opacity: 0.9;
+        }
+
+        @media (max-width:991px) {
+            .footer-clean .item.social>a {
+                margin-top: 40px;
+            }
+        }
+
+        @media (max-width:767px) {
+            .footer-clean .item.social>a {
+                margin-top: 10px;
+            }
+        }
+
+        .footer-clean .copyright {
+            margin-top: 14px;
+            margin-bottom: 0;
+            font-size: 13px;
+            opacity: 0.6;
+        }
+
+        .bottom_border>div>div>img.img-responsive {
+            padding: 10px;
+        }
+
+        #img-responsive-A2F {
+            height: 84px;
+        }
+
+        .contact {
+            margin-right: 0 !important;
+        }
+
+        .contact .info {
+            position: relative;
+        }
+
+        .contact .info li {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .contact .info li span:nth-child(1) {
+            margin-right: 10px;
+        }
+
+        /*footer of footer : border line */
+
+        .sp-column {
+            padding-top: 20px;
+        }
+
+        .bottom_border {
+            border-bottom: 1px solid #3a4950;
+            padding-bottom: 10px;
+        }
+
+        .foote_bottom_ul_amrc {
+            list-style-type: none;
+            padding: 0px;
+            display: table;
+            margin-top: 0px;
+            margin-right: auto;
+            margin-bottom: 10px;
+            margin-left: auto;
+        }
+
+        .foote_bottom_ul_amrc li {
+            display: inline;
+        }
+
+        .foote_bottom_ul_amrc li a {
+            font-size: 12px;
+            color: #999;
+            margin: 0 4px;
+        }
+
+        .foote_bottom_ul_amrc li a#term {
+            color: rgb(44, 152, 185);
+        }
+
+        .social_footer_ul {
+            display: table;
+            margin: 15px auto 0 auto;
+            list-style-type: none;
+        }
+
+        .social_footer_ul li {
+            padding-left: 20px;
+            padding-top: 10px;
+            float: left;
+        }
+
+        .social_footer_ul li a {
+            color: #CCC;
+            border: 1px solid #CCC;
+            padding: 8px;
+            border-radius: 50%;
+        }
+
+        .social_footer_ul li i {
+            width: 20px;
+            height: 20px;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
+
+    <!-- Footer : Start -->
     <footer>
+        <!-- Footer has background 1 : Start-->
         <div class="footer-clean footer-color1">
 
             <div class="container bottom_border">
@@ -56,12 +237,14 @@
                         <h3>Đăng ký nhận tin</h3>
                         <ul class="info">
                             <li>
-                                <span>Xin vui lòng để lại địa chỉ email, chúng tôi sẽ cập nhật những tin tức quan trọng tới bạn</span>
+                                <span>Xin vui lòng để lại địa chỉ email, chúng tôi sẽ cập nhật những tin tức quan trọng
+                                    tới bạn</span>
                             </li>
                             <li>
                                 <form>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Email liên hệ" id="footer-email">
+                                        <input type="text" class="form-control" placeholder="Email liên hệ"
+                                            id="footer-email">
 
                                         <span class="input-group-btn">
                                             <button type="button" class="btn btn-success">Đăng ký</button>
@@ -71,17 +254,13 @@
                                 </form>
                             </li>
                         </ul>
-
-
-
-
                     </div>
                 </div>
             </div>
-
-
         </div>
+        <!-- Footer has background 1 : End-->
 
+        <!-- Footer has background 2 : Start -->
         <div class="footer-clean footer-color2">
             <div class="container bottom_border">
                 <div class="row justify-content-center">
@@ -127,7 +306,8 @@
                             <li><a href="#">Sổ tay kế toán</a></li>
                         </ul>
                     </div>
-                    <div class="col-sm-2 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-linkedin"></i></a><a href="#"><i
+                    <div class="col-sm-2 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a
+                            href="#"><i class="icon ion-social-linkedin"></i></a><a href="#"><i
                                 class="icon ion-social-youtube"></i></a><a href="#"><i
                                 class="icon ion-social-pinterest"></i></a>
 
@@ -164,11 +344,11 @@
                         </div>
                     </div>
                 </div>
-
-                <!--social_footer_ul ends here-->
             </div>
         </div>
+        <!-- Footer has background 2 : End -->
     </footer>
+    <!-- Footer : Ends here -->
 
 
 </body>
