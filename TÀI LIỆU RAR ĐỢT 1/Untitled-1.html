@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+    
+    
+
+</head>
+<body>
+    <div id="example-basic">
+        <h3>Keyboard</h3>
+        <section>
+            <p>Try the keyboard navigation by clicking arrow left or right!</p>
+        </section>
+        <h3>Effects</h3>
+        <section>
+            <p>Wonderful transition effects.</p>
+        </section>
+        <h3>Pager</h3>
+        <section>
+            <p>The next and previous buttons help you to navigate through your content.</p>
+        </section>
+    </div>
+</body>
+
+<script>
+    $("#example-basic").steps({
+    headerTag: "h3",
+    bodyTag: "section",
+    transitionEffect: "slideLeft",
+    autoFocus: true
+});
+</script>
+</html>

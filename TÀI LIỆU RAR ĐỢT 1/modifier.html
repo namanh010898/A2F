@@ -1,0 +1,276 @@
+@{ Layout = null; }
+
+<!-- CSS Start -->
+<style>
+    .navbar-default .navbar-toggle:focus,
+    .navbar-default .navbar-toggle:hover {
+        background-color: white;
+    }
+    
+    .navbar {
+        margin-bottom: 0px;
+    }
+</style>
+
+<!--CSS TABS Start-->
+<style>
+    /* CSS in tab bar : Start */
+    
+    .nav-tabs-privacy>li>a {
+        line-height: 1.428571;
+        border: 1px solid transparent;
+        border-radius: 4px 4px 0 0;
+        padding: 20px 30px;
+        letter-spacing: 1px;
+        font-size: 18px;
+    }
+    
+    .nav-tabs-privacy,
+    .nav-tabs-privacy li {
+        width: 100%;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        box-shadow: inset 0px -1px 0px #C8E2E4;
+        background-color: #E9F4F5;
+        color: #265178;
+        border-bottom-width: thin;
+        border-bottom-style: solid;
+        border-bottom-color: #ccc;
+    }
+    
+    .nav-tabs>li.active>a,
+    .nav-tabs>li.active>a:focus,
+    .nav-tabs>li.active>a:hover {
+        background-color: #0D9CC9;
+        color: white;
+    }
+    
+    .fa-arrow-right {
+        float: right;
+        display: none;
+    }
+    
+    .fa-arrow-right.show {
+        display: block;
+    }
+    
+    i.icon-navbar {
+        padding-top: 3px;
+        pointer-events: none;
+    }
+    /* CSS in tab bar : End */
+    /* CSS inside content panels : Start */
+    
+    .tab-pane h2#first-tittle {
+        margin-top: 0px;
+        margin-bottom: 3rem;
+    }
+    
+    .tab-pane {
+        color: #265178;
+    }
+    
+    .tab-pane p,
+    .tab-pane li {
+        font-size: 17px;
+        text-align: justify;
+    }
+    /* CSS for infomation account form : Start */
+    
+    .login {
+        border-radius: 20px;
+        background-color: rgb(0 0 0 / 50%);
+        height: auto;
+        top: 15%;
+        padding: 30px;
+    }
+    
+    .login h3 {
+        color: #2AD9FF;
+    }
+    
+    .login h5 {
+        color: white;
+    }
+    
+    .login .btn {
+        width: 100%;
+        background: linear-gradient(278.2deg, #E4750E 11.21%, rgba(228, 117, 14, 0) 103.52%), #FFB526;
+    }
+    /* CSS for infomation account form : End */
+    /* CSS inside content panels : Ends */
+</style>
+<!-- CSS End -->
+
+<!-- Script Start -->
+<!-- Script for Navbar changes NavPanes -->
+<script>
+    $(document).ready(function() {
+        function getEventTarget(e) {
+            e = e || window.event;
+            return e.target || e.srcElement;
+        };
+        var ul = document.getElementById('privacy-ul');
+        ul.onclick = function(event) {
+            // debugger
+            var listLiInUl = $("li[role=presentation]");
+            for (var i = 0; i < listLiInUl.length; i++) {
+                var item = listLiInUl[i];
+                if (item.className == "active") {
+                    var childInLi = item.lastElementChild;
+                    var iconInLi = childInLi.lastElementChild.className = 'fa-solid fa-arrow-right icon-navbar';
+                }
+            }
+            var target = getEventTarget(event);
+            target.lastElementChild.className = 'fa-solid fa-arrow-right show icon-navbar';
+        };
+    });
+</script>
+<!-- Script End -->
+
+<!-- Content Tabbar and tabPanes-->
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom: 50px;">
+
+
+
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xlg-3">
+
+
+        <div class="collapse navbar-collapse" id="privacy-navbar">
+            <ul class="nav nav-tabs nav-tabs-privacy" id="privacy-ul" role="tablist" style="text-transform: uppercase;">
+                <li role="presentation" class="active">
+                    <a href="#home" aria-controls="home" role="tab" data-toggle="tab">
+                                Thông tin tài khoản <i class="fa-solid fa-arrow-right icon-navbar show"></i>
+                            </a>
+                </li>
+                <li role="presentation">
+                    <a href="#tab" aria-controls="tab" role="tab" data-toggle="tab">
+                                Đổi mật khẩu <i class="fa-solid fa-arrow-right icon-navbar "></i>
+                            </a>
+                </li>
+                <li role="presentation">
+                    <a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">
+                                Quản lý sự kiện <i class="fa-solid fa-arrow-right icon-navbar"></i>
+                            </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 col-xlg-9">
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="home">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                    <div class=" login">
+                        <h3>Thông tin tài khoản</h3>
+                        <h5>
+                            @ViewBag.lblNoiDungDangKy
+                        </h5>
+
+                        <form action="" method="POST" role="form">
+                            <div class="form-group">
+                                <label for="name">@ViewBag.lblHoVaTen</label><span class="required">*</span>
+                                <input type="text" class="form-control" id="name" placeholder="@ViewBag.lblHoVaTen">
+                                <label for="username">Tên đăng nhập</label><span class="required">*</span>
+                                <input type="text" class="form-control" id="username" placeholder="Nhập tên đăng nhập">
+                                <label for="username">@ViewBag.lblDiaChiEmail</label><span class="required">*</span>
+                                <input type="text" class="form-control" id="email" placeholder="@ViewBag.lblNhapEmail">
+                                <label for="password">@ViewBag.lblMatKhau</label><span class="required">*</span>
+                                <input type="password" class="form-control" name="password" id="password" placeholder="@ViewBag.lblNhapMatKhau">
+                                <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                                <label for="password">@ViewBag.lblNhapLaiMatKhau</label><span class="required">*</span>
+                                <input type="password" class="form-control" name="confirmpassword" id="confirm-password" placeholder="@ViewBag.lblNhapLaiMatKhau">
+                                <span toggle="#confirmpassword-field" class="fa fa-fw fa-eye field-icon toggle-confirmpassword"></span>
+                                <label for="IdCardNumber">Chứng minh thư</label>
+                                <input type="text" class="form-control" id="IdCardNumber" placeholder="Nhập số chứng minh thư">
+                                <label for="CompanyName">Tên doanh nghiệp</label>
+                                <input type="text" class="form-control" id="CompanyName" placeholder="Nhập tên doanh nghiệp">
+                                <label for="CompanyNumber">Số đăng ký kinh doanh </label>
+                                <input type="text" class="form-control" id="CompanyNumber" placeholder="Nhập số đăng ký kinh doanh">
+                            </div>
+                            <button type="submit" class="btn btn-warning">@ViewBag.lblDangKyTaiKhoan.ToUpper()</button>
+                            <div class="footer-form">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding: 0 !important;">
+
+                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" style="padding: 0 !important;">
+                                        <p class="control-label">
+                                            @ViewBag.lblDaCoTaiKhoan <a id="register-modal" href="/dang-nhap">@ViewBag.lblDangNhap</a>
+                                        </p>
+                                    </div>
+
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="padding: 0 !important;">
+                                        <div class="logo-social">
+                                            <i class="fa fa-name-shape-o-direction">
+                                        <img src="/images/icons8-google-48.png" height="30" width="30" alt="">
+                                    </i>
+                                            <i class="fa fa-name-shape-o-direction">
+                                        <img src="/images/icons8-facebook-48.png" height="30" width="30" alt="">
+                                    </i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+            <div role="tabpanel" class="tab-pane" id="tab">
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <h2 id="first-tittle">Chính sách bảo mật</h2>
+                    <p>
+                        You are also entitled to ask us to port your personal information (i.e. to transfer in a structured, commonly used and machine-readable format, to you), to erase it, or restrict its processing. You also have rights to object to some processing that is
+                        based on our legitimate interests, such as profiling that we perform for the purposes of direct marketing, and, where we have asked for your consent to process your data, to withdraw this consent as more fully described below.
+                    </p>
+                    <p>
+                        These rights are limited in some situations – for example, we can demonstrate that we have a legal requirement to process your personal information. In some instances, this means that we may retain some data even if you withdraw your consent.
+                    </p>
+                    <p>
+                        Where we require your personal information to comply with legal or contractual obligations, then provision of such data is mandatory: if such data is not provided, then we will not be able to manage our contractual relationship with you, or to meet obligations
+                        placed on us. In all other cases, provision of requested personal information is optional.
+
+                    </p>
+                    <h3> How you can access your personal information </h3>
+                    <p>How you can access your personal information</p>
+                    <p>
+                        We store personal information on secure servers that are managed by us and our service providers, and occasionally hard copy files that are kept in a secure location in Australia, Ireland, Mexico and the US. Personal information that we store or transmit
+                        is protected by security and access controls, including username and password authentication, two-factor authentication, and data encryption where appropriate.
+
+                    </p>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="tab1">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                    <h2 id="first-tittle">Sơ đồ Web</h2>
+                    <p>
+                        Where we require your personal information to comply with legal or contractual obligations, then provision of such data is mandatory: if such data is not provided, then we will not be able to manage our contractual relationship with you, or to meet obligations
+                        placed on us. In all other cases, provision of requested personal information is optional.
+
+                    </p>
+                    <p>
+                        You are also entitled to ask us to port your personal information (i.e. to transfer in a structured, commonly used and machine-readable format, to you), to erase it, or restrict its processing. You also have rights to object to some processing that is
+                        based on our legitimate interests, such as profiling that we perform for the purposes of direct marketing, and, where we have asked for your consent to process your data, to withdraw this consent as more fully described below.
+                    </p>
+                    <p>
+                        These rights are limited in some situations – for example, we can demonstrate that we have a legal requirement to process your personal information. In some instances, this means that we may retain some data even if you withdraw your consent.
+                    </p>
+                    <h3> How you can access your personal information </h3>
+                    <p>
+                        We store personal information on secure servers that are managed by us and our service providers, and occasionally hard copy files that are kept in a secure location in Australia, Ireland, Mexico and the US. Personal information that we store or transmit
+                        is protected by security and access controls, including username and password authentication, two-factor authentication, and data encryption where appropriate. How you can access your personal information
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Details</title>
+
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" media="screen" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Event-container responsive */
+        @media (min-width: 1200px) {
+            .event-container {
+                width: 640px;
+                
+            }
+        }
+
+        div.container p {
+            text-align: justify;
+        }
+
+        /* Video css : start */
+        .video-container {
+            width: 640px;
+            border-radius: 4px;
+            margin: 0 auto;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0px 8px 20px rgba(black, 0.4);
+        }
+
+        .video-wrapper {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            border-radius: 4px;
+        }
+
+        /* Video css : end */
+
+        /* Video-button play css : start  */
+        .play-button-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: auto;
+            pointer-events: none;
+        }
+
+        #circle-play-b {
+            cursor: pointer;
+            pointer-events: auto;
+        }
+
+        svg {
+            width: 100px;
+            height: 100px;
+            fill: #fff;
+            stroke: #fff;
+            cursor: pointer;
+            background-color: rgba(black, 0.2);
+            border-radius: 50%;
+            opacity: 0.9;
+        }
+
+        /* Video-button play css : End */
+    </style>
+
+    <style>
+        /* Video infomation below : Start */
+        .spanDayReleaseBlue {
+            float: left;
+            line-height: 15px;
+            font-size: 12px;
+            color: #265178;
+        }
+
+        .buttonCategoryOfNews {
+        border-radius: 5;
+        border: 0px solid transparent;
+        background-color: #e94c0e !important;
+        background-image: linear-gradient(to bottom right,  #efbe66, #f19355c7, #e37c19d2) !important;
+        padding: 1rem 2rem !important;
+                line-height: 1rem !important;
+    }
+        /* Video infomation below : End */
+        
+
+        /*  Button 'Đang Diễn Ra' : Start */
+        .button-76 {
+            background-color: #49d17d;
+            background-image: linear-gradient(to bottom right,  #c5f3e5, #41d3a7c7, #008104);
+            border: 0;
+            box-sizing: border-box;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1.125rem;
+            /* 18px */
+            font-weight: 600;
+            line-height: 1.75rem;
+            /* 28px */
+            padding: 1rem 1.25rem;
+            text-align: center;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        .button-76:hover {
+            box-shadow: none;
+        }
+
+        @media (min-width: 1024px) {
+            .button-76 {
+                font-size: 1.5rem;
+                /* 24px */
+                padding: 1rem 3rem;
+                line-height: 0.5rem;
+                /* 32px */
+            }
+        }
+
+        /*  Button 'Đang Diễn Ra' : End */
+    </style>
+
+
+
+    <!-- Video-button play script : Start -->
+    <script>
+        $(document).ready(function () {
+            const video = document.getElementById("video");
+            const circlePlayButton = document.getElementById("circle-play-b");
+
+            function togglePlay() {
+                if (video.paused || video.ended) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            }
+
+            circlePlayButton.addEventListener("click", togglePlay);
+            video.addEventListener("playing", function () {
+                circlePlayButton.style.opacity = 0;
+            });
+            video.addEventListener("pause", function () {
+                circlePlayButton.style.opacity = 1;
+            });
+        });
+    </script>
+    <!-- Video-button play script : End -->
+
+</head>
+
+<body>
+
+    <!-- Main Layout : Start -->
+
+    <!-- Image background and Video : Start -->
+        <div style="background-color: #E9F4F5;width: 100%; position: relative; background-repeat: no-repeat;background-size: contain;">
+            <div
+            style="background-image: url('Models/Group\ 331.png'); width: 100%; position: relative; background-repeat: no-repeat;background-size: contain;">
+            <div class="container event-container" style="text-align: center; padding-top: 5%;">
+                <!-- Quote : Start -->
+    
+                <h2 style="margin: auto; font-size: 30px; color: white; margin-bottom: 30px;">Hỗ trợ doanh
+                    nghiệp khu vực tư nhân kinh doanh bền
+                    vững giai đoạn 2021 - 2025</h2>
+    
+                <div class="button-wrapper" style="margin: auto;">
+                    <button class="button-76" role="button" style="margin: auto; margin-bottom: 5%;">Đang diễn ra</button>
+                </div>
+                <!-- Quote : End -->
+    
+                <!-- Video : Start -->
+                <div class="video-wrapper">
+                    <div class="video-container" id="video-container">
+                        <video controls id="video" preload="metadata" poster="images/Rectangle 158.png"
+                            style="padding-top: 5%;">
+                            <source src="https://cdn.jsdelivr.net/npm/big-buck-bunny-1080p@0.0.6/video.mp4"
+                                type="video/mp4">
+                        </video>
+                        <div class="row" style="margin-top: 15px; margin-bottom: 15px;">
+                            
+                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1" style="right: -10px;">
+                                <p><i class="fas fa-calendar-day"></i></p>
+                                 <p><i class="fas fa-map-marker-alt" ></i></p>
+                            </div>
+                            
+                            <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7" style="right: 15px;">
+                                <p style="text-align: left;">11/08/2021    -   21/08/2021</p>
+                                
+                            <p style="text-align: left;">Số 6B Hoàng Diệu, Ba Đình, Hà Nội</p>
+                            </div>
+                            
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                           <span style="float:right; "><button class="btn btn-primary button-76 buttonCategoryOfNews ">Tham gia sự kiện</button></span>
+                                
+                            </div>
+                            
+                           
+                        </div>
+    
+    
+                        <div class="play-button-wrapper">
+                            <div title="Play video" class="play-gif" id="circle-play-b">
+                                <!-- SVG Play Button -->
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+                                    <path d="M40 0a40 40 0 1040 40A40 40 0 0040 0zM26 61.56V18.44L64 40z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Video : End -->
+    
+                <p>
+                    Là tổ chức hoạt động trên phạm vi toàn cầu, cung cấp dịch vụ trong lĩnh vực hợp tác quốc tế vì mục tiêu
+                    phát triển bền vững,
+                    Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH - Tổ chức Hợp tác Phát triển Đức làm
+                    việc cùng với các đối tác
+                    để xây dựng các giải pháp hiệu quả mang đến cho mọi người triển vọng tốt hơn và cải thiện bền vững điều
+                    kiện sống của họ. GIZ là
+                    một tổ chức trực thuộc Nhà nước Liên bang vì lợi ích công và hỗ trợ Chính phủ Đức cũng như nhiều khách
+                    hàng khu vực công và tư nhân
+                    trong nhiều lĩnh vực, bao gồm phát triển kinh tế và việc làm, năng lượng và môi trường, hòa bình và an
+                    ninh.
+                </p>
+                <p>
+                    GIZ đã làm việc tại Việt Nam trong hơn 20 năm qua, cung cấp các dịch vụ tư vấn cho Chính phủ Việt Nam
+                    trên nhiều lĩnh vực.
+                    Các lĩnh vực hợp tác ưu tiên hiện nay là môi trường và tài nguyên, đào tạo nghề và năng lượng. Bên cạnh
+                    đó, GIZ cũng hỗ trợ
+                    việc thực hiện Chiến lược Tăng trưởng xanh của Việt Nam.
+    
+                </p>
+    
+                <p>
+    
+                    Để biết thêm thông tin chi tiết, vui lòng truy cập trang web GIZ: www.giz.de/viet-nam
+                </p>
+    
+    
+            </div>
+        </div>
+        </div>
+            <!-- Image background and Video : Start -->
+    </div>
+
+
+
+    <!-- Main Layout : End -->
+
+
+    <footer></footer>
+</body>
+
+</html>
